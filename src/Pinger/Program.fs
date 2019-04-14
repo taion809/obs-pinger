@@ -4,6 +4,9 @@ open System
 open Microsoft.AspNetCore.Builder
 open Microsoft.AspNetCore.Hosting
 open Microsoft.Extensions.DependencyInjection
+open Microsoft.AspNetCore.Http
+open FSharp.Control.Tasks.V2.ContextInsensitive
+open Prometheus
 open Giraffe
 
 let configureApp (app : IApplicationBuilder) =
