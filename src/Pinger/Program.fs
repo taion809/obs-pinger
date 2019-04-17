@@ -10,6 +10,10 @@ open Prometheus
 open Giraffe
 
 let configureApp (app : IApplicationBuilder) =
+    // Add our metrics server and default http metrics handlers
+    app.UseHttpMetrics() |> ignore
+    app.UseMetricServer() |> ignore
+
     // Add Giraffe to the ASP.NET Core pipeline
     app.UseMetricServer |> ignore
     app.UseGiraffe Handlers.webApp
