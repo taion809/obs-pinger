@@ -16,6 +16,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Handlers.fs" />
+    <Compile Include="LoggingTracer.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 </Project>

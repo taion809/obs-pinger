@@ -4,9 +4,11 @@ open System
 open Microsoft.AspNetCore.Builder
 open Microsoft.AspNetCore.Hosting
 open Microsoft.Extensions.DependencyInjection
-open Microsoft.AspNetCore.Http
-open FSharp.Control.Tasks.V2.ContextInsensitive
-open Prometheus
+open Microsoft.Extensions.Logging
+open Serilog
+open Serilog.Events
+open Serilog.Formatting.Compact
+open LoggingTracer
 open Giraffe
 
 let configureApp (app : IApplicationBuilder) =
