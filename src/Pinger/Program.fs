@@ -4,6 +4,7 @@ open System
 open Microsoft.AspNetCore.Builder
 open Microsoft.AspNetCore.Hosting
 open Microsoft.Extensions.DependencyInjection
+open JaegerTracer
 open Giraffe
 
 let configureApp (app : IApplicationBuilder) =
@@ -11,6 +12,10 @@ let configureApp (app : IApplicationBuilder) =
     app.UseGiraffe Handlers.webApp
 
 let configureServices (services : IServiceCollection) =
+    // Add OpenTracing dependencies
+    services.AddJaeger() |> ignore
+    services.AddOpenTracing() |> ignore
+
     // Add Giraffe dependencies
     services.AddGiraffe() |> ignore
 
